@@ -1,1 +1,87 @@
 /* Add your CSS here */
+
+/* Carousel container styles */
+.carousel {
+  /* Use flexbox to arrange cards in a row */
+  display: flex;
+  /* Allows horizontal scrolling if content is too wide */
+  overflow-x: auto;
+  /* Adds some space below the carousel */
+  margin-bottom: 20px;
+  /* Adds a little padding for better look */
+  padding-bottom: 10px;
+  /* Enable scroll snap for smooth card snapping */
+  scroll-snap-type: x mandatory;
+}
+
+/* Each card in the carousel */
+.card {
+  /* Flex item for flexbox */
+  flex: 0 0 25%; /* Show 4 cards at a time (100% / 4 = 25%) */
+  /* Add some space between cards */
+  margin-right: 16px;
+  /* Add a border and background for visibility */
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  /* Rounded corners */
+  border-radius: 8px;
+  /* Add some padding inside the card */
+  padding: 12px;
+  /* Align cards to the top */
+  vertical-align: top;
+  /* Simple box shadow for effect */
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+  /* Make sure text wraps inside the card */
+  white-space: normal;
+  /* Enable scroll snap for each card */
+  scroll-snap-align: start;
+  /* Set min-width for better mobile support */
+  min-width: 220px;
+  box-sizing: border-box;
+  position: relative; /* Needed for overlay positioning */
+  overflow: hidden; /* Hide overlay outside card */
+}
+
+/* Optional: Make images fit the card */
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Overlay for the paragraph */
+.card .card-overlay {
+  /* Position overlay to cover the card */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Semi-transparent background */
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  /* Center text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Hide overlay by default */
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 16px;
+  box-sizing: border-box;
+  font-size: 1em;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.card:hover .card-overlay {
+  /* Show overlay on hover */
+  opacity: 1;
+}
+
+.card p {
+  /* Hide the original paragraph when overlay is shown */
+  position: relative;
+  z-index: 1;
+}

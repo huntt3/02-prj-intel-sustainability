@@ -25,10 +25,10 @@ header {
   /* Use a blue gradient for Intel branding */
   background: linear-gradient(70deg, #00aee6 0%, #0c5b97 100%);
   color: var(--intel-white);
-  padding: 30px 0 16px 0;
+  padding: 30px 0 30px 0;
   text-align: center;
-  height: 35vh;
   font-size: 1.4em;
+  
 }
 
 header img {
@@ -44,6 +44,25 @@ header img {
 
 h1, h2, h3 {
   color: var(--intel-dark-blue);
+}
+
+/* Allow the main heading to wrap onto multiple lines */
+header h1,
+header .main-heading {
+  white-space: normal;
+  word-break: break-word;
+  display: block;
+  margin: 0 auto 12px auto;
+  max-width: 90vw;
+}
+
+header p {
+  /* Allow the subheading to wrap as well */
+  white-space: normal;
+  word-break: break-word;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5em;
 }
 
 /* Carousel container styles */

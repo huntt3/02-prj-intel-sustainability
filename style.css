@@ -22,7 +22,9 @@ body {
 
 /* Header styles */
 header {
-  background: var(--intel-blue);
+  /* Use a blue gradient for Intel branding */
+ /*background: linear-gradient(90deg, #0071c5 0%, #00aee6 100%);*/
+  background: linear-gradient(70deg, #00aee6 0%, #0c5b97 100%);
   color: var(--intel-white);
   padding: 24px 0 16px 0;
   text-align: center;
@@ -34,7 +36,7 @@ header img {
 }
 
 h1, h2, h3 {
-  color: var(--intel-dark-blue);
+  color: var(--intel-white);
 }
 
 /* Carousel container styles */
@@ -57,7 +59,7 @@ h1, h2, h3 {
 /* Each card in the carousel */
 .card {
   /* Flex item for flexbox */
-  flex: 0 0 25%; /* Show 4 cards at a time (100% / 4 = 25%) */
+  flex: 0 0 24.5%; /* Show 4 cards at a time (100% / 4 = 25%) */
   /* Add some space between cards */
   margin-right: 16px;
   /* Add a border and background for visibility */
@@ -66,7 +68,7 @@ h1, h2, h3 {
   /* Rounded corners */
   border-radius: 8px;
   /* Add some padding inside the card */
-  padding: 12px;
+  padding: 10px;
   /* Align cards to the top */
   vertical-align: top;
   /* Simple box shadow for effect */
@@ -141,4 +143,22 @@ h1, h2, h3 {
   color: var(--intel-blue);
   font-weight: bold;
   margin-top: 16px;
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 700px) {
+  .carousel {
+    flex-direction: column;
+    /* Remove horizontal scroll and snap for column layout */
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding: 0;
+  }
+  .card {
+    flex: 1 1 100%; /* Cards take full width */
+    min-width: 0; /* Remove min-width for stacking */
+    margin-right: 0;
+    margin-bottom: 16px; /* Add space between stacked cards */
+    max-width: 95vw;
+  }
 }
